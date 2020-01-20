@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tyru/capture.vim'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -55,5 +56,9 @@ nnoremap <Space>n :NERDTree<CR>
 noremap <S-h>   ^
 noremap <S-l>   $
 nnoremap <CR> i<CR><ESC>
-nnoremap <Space>lint :Capture !npm run lint<CR>
 
+let g:ale_linters = {
+      \'html': [],
+      \'javascript': ['eslint'],
+      \'vue': ['eslint']
+      \}
